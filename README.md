@@ -1,4 +1,4 @@
-# eth_signDataWithIntendedValidator 🚀
+# wallet_signIntendedValidatorData 🚀
 
 ## Table of Contents
 
@@ -13,12 +13,12 @@
 ## Links
 
 * Closed [EIP Specs PR](https://github.com/ethereum/EIPs/pull/8680/).
-* PR to [add eth_signDataWithIntendedValidator](https://github.com/ethereum/execution-apis/pull/569) in [execution-apis]().
+* PR to [add wallet_signIntendedValidatorData](https://github.com/ethereum/execution-apis/pull/569) in [execution-apis]().
 * [Discussion in Metamask Forum](https://community.metamask.io/t/add-support-for-eipe-191-version-0-intended-validator-data/28940) (+15 votes).
 
 ## Summary
 
-This proposal adds a new JSON-RPC method, `eth_signIntendedValidatorData`, which allows signing data with an intended validator address using [EIP-191] version [0x00] with this format:
+This proposal adds a new JSON-RPC method, `wallet_signIntendedValidatorData`, which allows signing data with an intended validator address using [EIP-191] version [0x00] with this format:
 
 ```bash
 0x19 <0x00> <intended validator address> <data to sign>
@@ -51,7 +51,7 @@ With the rise of smart contract accounts and the reliance on signatures to impro
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 and RFC 8174.
 
-### `eth_signIntendedValidatorData`
+### `wallet_signIntendedValidatorData`
 
 MUST calculate an Ethereum signature using `sign(keccak256("\x19\x00<signature validator address><data to sign>"))`.
 
@@ -72,13 +72,13 @@ This method adds a prefix to the message to prevent malicious dApps from signing
 **Request:**
 
 ```bash
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signIntendedValidatorData","params":["0x6aFbBC5e6AFcB251371711a6551E60ead2779Dc0", "0x345B918b9E06fAa7B0e56bd71Ba418F31F47FED4", "0x59616d656e"], "id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"wallet_signIntendedValidatorData","params":["0x6aFbBC5e6AFcB251371711a6551E60ead2779Dc0", "0x345B918b9E06fAa7B0e56bd71Ba418F31F47FED4", "0x59616d656e"], "id":1}'
 ```
 
 ```json
 {
   "jsonrpc": "2.0",
-  "method": "eth_signIntendedValidatorData",
+  "method": "wallet_signIntendedValidatorData",
   "params": [
     "0x6aFbBC5e6AFcB251371711a6551E60ead2779Dc0",
     "0x345B918b9E06fAa7B0e56bd71Ba418F31F47FED4",
@@ -100,7 +100,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signIntendedValidatorData","
 
 ## Rationale
 
-The `eth_signIntendedValidatorData` method aims to bridge the gap between the simplicity of [EIP-191] version [0x45] and the structured approach of [EIP-712]. By specifying the intended validator address, it reduces phishing risks and provides a more secure signing method for smart contract accounts and other use cases requiring a specific validator address.
+The `wallet_signIntendedValidatorData` method aims to bridge the gap between the simplicity of [EIP-191] version [0x45] and the structured approach of [EIP-712]. By specifying the intended validator address, it reduces phishing risks and provides a more secure signing method for smart contract accounts and other use cases requiring a specific validator address.
 
 ## Backwards Compatibility
 
