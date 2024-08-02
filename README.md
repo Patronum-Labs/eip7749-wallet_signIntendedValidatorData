@@ -1,4 +1,4 @@
-# wallet_signIntendedValidatorData 🚀
+# EIP-7749: wallet_signIntendedValidatorData 🚀
 
 ## Table of Contents
 
