@@ -14,7 +14,8 @@
 
 * PR to [add `wallet_signIntendedValidatorData` JSON-RPC method](https://github.com/ethereum/EIPs/pull/8774)
 * [Ethereum Magicians Discussion](https://ethereum-magicians.org/t/eip-7749-add-wallet-signintendedvalidatordata-method/20693)
-* [Discussion in Metamask Forum](https://community.metamask.io/t/add-support-for-eipe-191-version-0-intended-validator-data/28940) (+15 votes).
+* [Discussion in Metamask Forum](https://community.metamask.io/t/add-support-for-eipe-191-version-0-intended-validator-data/28940) (+15 votes)
+* Discussion in viem to support [wallet_signIntendedValidatorData](https://github.com/wevm/viem/discussions/2225)
 
 ## Summary
 
